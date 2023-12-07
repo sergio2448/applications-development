@@ -1,18 +1,27 @@
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import Icon from 'react-native-vector-icons/AntDesign';
 import React, { useState } from 'react';
 
-const InputComponent = () => {
+const InputComponent = ({ items, setItems }) => {
   const [text, setText] = useState('');
+  console.log('text', text);
   return (
-    <View>
-      <Text>InputComponent</Text>
+    <View style={styles.container}>
       <TextInput
         style={styles.input}
         value={text}
         onChangeText={setText}
         placeholder="Nombre"
       />
-      <Button title="Press me" />
+      <Icon.Button
+        iconStyle={{
+          margin: 0,
+        }}
+        name="pluscircleo"
+        color="#FFF"
+        backgroundColor="#29B6F6"
+        onPress={() => setItems([...items, text])}
+      />
     </View>
   );
 };
@@ -20,9 +29,11 @@ const InputComponent = () => {
 export default InputComponent;
 
 const styles = StyleSheet.create({
+  container: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
   input: {
-    height: 40,
-    margin: 12,
     borderWidth: 1,
     padding: 10,
   },

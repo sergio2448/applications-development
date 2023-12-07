@@ -4,7 +4,7 @@ import React from 'react';
 const ModalComponent = () => {
   return (
     <View>
-      <Text>ModalComponent</Text>
+      <Text></Text>
     </View>
   );
 };

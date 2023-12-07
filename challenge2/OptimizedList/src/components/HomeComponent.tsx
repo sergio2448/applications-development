@@ -1,16 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import InputComponent from './InputComponent';
 import ModalComponent from './ModalComponent';
 import FlatListComponent from './FlatListComponent';
 
 const HomeComponent = () => {
+  const [items, setItems] = useState(['Entrega Coder']);
+  const itemsProps = {
+    items,
+    setItems,
+  };
   return (
     <View>
-      <Text>HomeComponent</Text>
-      <InputComponent />
+      <InputComponent {...itemsProps} />
       <ModalComponent />
-      <FlatListComponent />
+      <FlatListComponent {...itemsProps} />
     </View>
   );
 };

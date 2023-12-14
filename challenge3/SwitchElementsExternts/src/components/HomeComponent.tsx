@@ -4,11 +4,12 @@ import InputComponent from './InputComponent';
 import ModalComponent from './ModalComponent';
 import FlatListComponent from './FlatListComponent';
 
-const HomeComponent = () => {
+const HomeComponent = ({ onTaskSelected }) => {
   const [items, setItems] = useState(['Entrega Coder']);
   const itemsProps = {
     items,
     setItems,
+    onTaskSelected,
   };
   return (
     <View>

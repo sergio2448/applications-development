@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ItemComponent from './ItemComponent';
 import ModalComponent from './ModalComponent';
 
-const FlatListComponent = ({ items, setItems }) => {
+const FlatListComponent = ({ items, setItems, onTaskSelected }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -16,7 +16,6 @@ const FlatListComponent = ({ items, setItems }) => {
       <FlatList
         data={items}
         renderItem={(item) => {
-          item.
           const propsItem = {
             id,
             item,
@@ -24,6 +23,7 @@ const FlatListComponent = ({ items, setItems }) => {
             setItems,
             modalVisible,
             setModalVisible,
+            onTaskSelected,
           };
           return <ItemComponent {...propsItem} />;
         }}

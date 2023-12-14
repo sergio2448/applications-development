@@ -4,12 +4,20 @@ import React from 'react';
 import ModalComponent from './ModalComponent';
 
 const ItemComponent = (props) => {
-  const { id, item: title, items, setItems, modalVisible, setModalVisible } = props;
+  const {
+    id,
+    item: title,
+    items,
+    setItems,
+    modalVisible,
+    setModalVisible,
+    onTaskSelected,
+  } = props;
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{title}</Text>
       <View style={styles.buttonsContainer}>
-          <ModalComponent {...propsModal} />
+        <ModalComponent {...propsModal} />
         <Icon.Button
           iconStyle={{
             margin: 0,
@@ -17,7 +25,7 @@ const ItemComponent = (props) => {
           name="checkcircleo"
           color="green"
           backgroundColor="#FAFAFA"
-          onPress={() => Alert.alert('Button example')}
+          onPress={() => onTaskSelected(id)}
         />
         <Icon.Button
           iconStyle={{

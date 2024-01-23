@@ -6,6 +6,7 @@ import ShopNavigator from './ShopNavigator';
 import CartNavigator from './CartNavigator';
 import OrdersNavigator from './OrdersNavigator';
 import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
+import ProfileNavigator from './ProfileNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,6 +49,19 @@ const TabNavigator = () => {
             tabBarIcon: ({ focused }) => (
               <FontAwesome
                 name="reorder"
+                size={24}
+                color={focused ? '#fff' : '#ccc'}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="ProfileStack"
+          component={ProfileNavigator}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <FontAwesome
+                name="user-o"
                 size={24}
                 color={focused ? '#fff' : '#ccc'}
               />
